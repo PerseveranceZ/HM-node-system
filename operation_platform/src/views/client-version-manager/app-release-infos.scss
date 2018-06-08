@@ -1,0 +1,58 @@
+.table-expand {
+  font-size: 0;
+
+  label {
+    width: 90px;
+    color: #99a9bf;
+  }
+  .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
+
+.upload-package-dialog {
+  .el-form-item__label {
+    width: 130px;
+  }
+}
+
+.el-dialog {
+  .el-form-item {
+    display: flex;
+    align-items: flex-start;
+    .el-input, .el-date-picker, textarea {
+      width: 400px;
+    }
+
+    input[type=file]#file-upload {
+      display: none;
+    }
+  }
+}
+
+.dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.update-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+
+.tool-tip {
+  padding: 5px !important;
+  border-width: 0px !important;
+}

@@ -1,0 +1,8 @@
+ci:
+  script:
+    - cd xxxx
+    - git pull
+    - npm i
+    - npm run sit
+  only:
+    - master

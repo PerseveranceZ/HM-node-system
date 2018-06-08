@@ -1,0 +1,9 @@
+ci:
+  script:
+    - cd xxxx
+    - git pull
+    - npm i
+    - pm2 reload all
+  only:
+    - develop
+

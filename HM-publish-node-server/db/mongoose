@@ -1,0 +1,39 @@
+/**
+ * Created by tangsicheng on 2017/12/28.
+ */
+/**
+ * https://www.cnblogs.com/zhongweiv/p/mongoose.html
+ */
+var mongoose = require("mongoose");
+var ENVIROMENT_INFO = require('../config/config').ENVIROMENT_INFO;
+var DB_URL = ENVIROMENT_INFO.mongodbURL;
+var logger = require('../config/log4js').logger;
+/**
+ * 连接
+ * todo 这里应该多做一些配置，参考 http://mongoosejs.com/docs/connections.html#use-mongo-client
+ * todo mongoos 多库连接配置：http://blog.csdn.net/m0_37263637/article/details/78963991
+ */
+mongoose.connect(DB_URL);
+/**
+ * 更多监听事件，可以查看http://mongoosejs.com/docs/api.html#connection_Connection
+ */
+/**
+ * 连接成功
+ */
+mongoose.connection.on('connected',function () {
+    logger.info(`Mongoose connection open to ${DB_URL}`);
+})
+/**
+ * 连接异常
+ */
+mongoose.connection.on('error',function (err) {
+    logger.error(`Mongoose connection error : ${err}`);
+})
+/**
+ * 连接断开
+ */
+mongoose.connection.on('disconnected',function () {
+    logger.info(`Mongoose connection disconnected`);
+})
+
+module.exports = mongoose;
